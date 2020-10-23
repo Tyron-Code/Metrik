@@ -10,6 +10,7 @@ public class MainWindow extends Frame implements WindowListener {
 
         addWindowListener(this);
         add(new DrawObject());
+        setMenuBar(new MainMenuBar());
     }
 	
 	public void openWindow() {
