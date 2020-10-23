@@ -7,6 +7,7 @@ import java.awt.geom.Ellipse2D;
 public class DrawObject extends Canvas implements MouseListener {
 
 	private float _x, _y;
+	private int clickCount = 0;
 
     public DrawObject() {
         _x = _y = 0;
@@ -26,6 +27,17 @@ public class DrawObject extends Canvas implements MouseListener {
 
 
          g2d.draw(ellipse2D);
+         
+         String s = ("X: " + _x + ", Y: " + _y);
+         int w2 = g.getFontMetrics().stringWidth(s) / 2;
+         int h2 = g.getFontMetrics().getHeight();
+
+         g2d.drawString(s, getWidth() / 2 - w2, h2);
+         
+         if (clickCount == 2) {
+             repaint();
+             clickCount = 0;
+         }
         
     }
 
@@ -34,6 +46,7 @@ public class DrawObject extends Canvas implements MouseListener {
 		_x = e.getX();
         _y = e.getY();
         paint(getGraphics());
+        clickCount++;
 	}
 
 	@Override

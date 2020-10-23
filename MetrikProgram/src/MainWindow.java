@@ -5,11 +5,12 @@ import java.awt.event.WindowListener;
 public class MainWindow extends Frame implements WindowListener {
 	
 	public MainWindow() {
-        setTitle("Metrik Version 1.0");
+        setTitle("Metrik Version 1.2");
         setSize(500,500);
 
         addWindowListener(this);
         add(new DrawObject());
+        setMenuBar(new MainMenuBar());
     }
 	
 	public void openWindow() {
