@@ -19,12 +19,14 @@ public class DrawObject extends Canvas implements MouseListener {
     public void paint(Graphics g) {
         if (_x == 0 && _y == 0) return;
         Graphics2D g2d = (Graphics2D) g;
-        g2d.setStroke(new BasicStroke(2.5F));
-         Ellipse2D ellipse2D = new Ellipse2D.Float(
+        g2d.setStroke(new BasicStroke(2.5F));  
+        Ellipse2D ellipse2D = new Ellipse2D.Float(
                 _x, _y,
                 50, 50);
 
+
          g2d.draw(ellipse2D);
+        
     }
 
 	@Override
