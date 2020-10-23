@@ -26,6 +26,12 @@ public class DrawObject extends Canvas implements MouseListener {
 
 
          g2d.draw(ellipse2D);
+         
+         String s = ("X: " + _x + ", Y: " + _y);
+         int w2 = g.getFontMetrics().stringWidth(s) / 2;
+         int h2 = g.getFontMetrics().getHeight();
+
+         g2d.drawString(s, getWidth() / 2 - w2, h2);
         
     }
 
