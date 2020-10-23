@@ -6,7 +6,7 @@ import java.awt.geom.Ellipse2D;
 
 public class DrawObject extends Canvas implements MouseListener {
 
-	private float _x, _y;
+	private int _x, _y;
 
     public DrawObject() {
         _x = _y = 0;
@@ -20,11 +20,11 @@ public class DrawObject extends Canvas implements MouseListener {
         if (_x == 0 && _y == 0) return;
         Graphics2D g2d = (Graphics2D) g;
         g2d.setStroke(new BasicStroke(2.5F));
-        Ellipse2D ellipse2D = new Ellipse2D.Float(
+        /** Ellipse2D ellipse2D = new Ellipse2D.Float(
                 _x, _y,
-                50, 50);
+                50, 50); */
 
-        g2d.draw(ellipse2D);
+        g2d.drawRect(_x, _y, 50, 50);
     
     }
 
